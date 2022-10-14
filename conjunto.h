@@ -16,6 +16,8 @@ public:
     QString getConjunto() const;
     bool buscar(int elemento) const;
     void incluirElemento(int elemento);
+
+
     Conjunto *uniao(Conjunto const *const P);
     Conjunto *inter(Conjunto const *const P);
     Conjunto *diff(Conjunto const *const P);

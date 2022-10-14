@@ -1,6 +1,8 @@
 #include "telaprincipal.h"
 #include "ui_telaprincipal.h"
 
+//boolenao para verificar quando os 2 conjuntos forem criados
+//fazendo com que os botoes com os metodos unicao etc sejam ativos
 bool verA=false,verB=false;
 
 TelaPrincipal::TelaPrincipal(QWidget *parent)
