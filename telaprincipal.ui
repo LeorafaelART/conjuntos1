@@ -342,28 +342,46 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>380</y>
+      <width>80</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Executar</string>
+    </property>
+   </widget>
    <widget class="QTableWidget" name="tableWidgetSaida">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>380</y>
-      <width>751</width>
-      <height>371</height>
+      <x>170</x>
+      <y>410</y>
+      <width>301</width>
+      <height>161</height>
      </rect>
     </property>
     <row>
      <property name="text">
-      <string>CONJUNTO VAZIO</string>
+      <string>VAZIO</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>SUBCONJUNTO </string>
+      <string>SUBCONJUNTO</string>
      </property>
     </row>
     <row>
      <property name="text">
-      <string>IDENTICOS</string>
+      <string>DISJUNTO</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>MEDIA</string>
      </property>
     </row>
     <column>
@@ -384,7 +402,7 @@
      <x>0</x>
      <y>0</y>
      <width>784</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

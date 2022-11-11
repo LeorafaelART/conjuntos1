@@ -12,12 +12,14 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -61,6 +63,8 @@ public:
     QVBoxLayout *verticalLayout;
     QLabel *label_7;
     QLineEdit *lineEditResultado;
+    QPushButton *pushButton;
+    QTableWidget *tableWidgetSaida;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -68,12 +72,12 @@ public:
     {
         if (TelaPrincipal->objectName().isEmpty())
             TelaPrincipal->setObjectName(QString::fromUtf8("TelaPrincipal"));
-        TelaPrincipal->resize(800, 600);
+        TelaPrincipal->resize(784, 801);
         centralwidget = new QWidget(TelaPrincipal);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(110, 20, 181, 31));
+        label->setGeometry(QRect(80, 20, 221, 41));
         lineEditSaidaCA = new QLineEdit(centralwidget);
         lineEditSaidaCA->setObjectName(QString::fromUtf8("lineEditSaidaCA"));
         lineEditSaidaCA->setGeometry(QRect(20, 180, 341, 31));
@@ -81,16 +85,18 @@ public:
         font.setPointSize(16);
         font.setBold(true);
         lineEditSaidaCA->setFont(font);
+        lineEditSaidaCA->setReadOnly(true);
         lineEditSaidaCB = new QLineEdit(centralwidget);
         lineEditSaidaCB->setObjectName(QString::fromUtf8("lineEditSaidaCB"));
         lineEditSaidaCB->setGeometry(QRect(430, 180, 341, 31));
         lineEditSaidaCB->setFont(font);
+        lineEditSaidaCB->setReadOnly(true);
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(520, 20, 181, 31));
+        label_4->setGeometry(QRect(490, 20, 211, 41));
         layoutWidget = new QWidget(centralwidget);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(430, 130, 339, 35));
+        layoutWidget->setGeometry(QRect(430, 130, 339, 38));
         horizontalLayout_3 = new QHBoxLayout(layoutWidget);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
@@ -113,7 +119,7 @@ public:
 
         layoutWidget_2 = new QWidget(centralwidget);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(430, 70, 344, 35));
+        layoutWidget_2->setGeometry(QRect(430, 70, 344, 38));
         horizontalLayout_4 = new QHBoxLayout(layoutWidget_2);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
@@ -136,7 +142,7 @@ public:
 
         layoutWidget1 = new QWidget(centralwidget);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(20, 130, 339, 35));
+        layoutWidget1->setGeometry(QRect(20, 130, 339, 38));
         horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -159,7 +165,7 @@ public:
 
         layoutWidget2 = new QWidget(centralwidget);
         layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(20, 70, 344, 35));
+        layoutWidget2->setGeometry(QRect(20, 70, 344, 38));
         horizontalLayout = new QHBoxLayout(layoutWidget2);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
@@ -182,7 +188,7 @@ public:
 
         layoutWidget3 = new QWidget(centralwidget);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(20, 230, 751, 35));
+        layoutWidget3->setGeometry(QRect(20, 230, 751, 38));
         horizontalLayout_5 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
@@ -212,7 +218,7 @@ public:
 
         layoutWidget4 = new QWidget(centralwidget);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 290, 751, 54));
+        layoutWidget4->setGeometry(QRect(20, 290, 751, 76));
         verticalLayout = new QVBoxLayout(layoutWidget4);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -224,13 +230,36 @@ public:
         lineEditResultado = new QLineEdit(layoutWidget4);
         lineEditResultado->setObjectName(QString::fromUtf8("lineEditResultado"));
         lineEditResultado->setFont(font);
+        lineEditResultado->setReadOnly(true);
 
         verticalLayout->addWidget(lineEditResultado);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(300, 380, 80, 23));
+        tableWidgetSaida = new QTableWidget(centralwidget);
+        if (tableWidgetSaida->columnCount() < 2)
+            tableWidgetSaida->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        tableWidgetSaida->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        tableWidgetSaida->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        if (tableWidgetSaida->rowCount() < 4)
+            tableWidgetSaida->setRowCount(4);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(0, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(1, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(2, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(3, __qtablewidgetitem5);
+        tableWidgetSaida->setObjectName(QString::fromUtf8("tableWidgetSaida"));
+        tableWidgetSaida->setGeometry(QRect(170, 410, 301, 161));
         TelaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 24));
+        menubar->setGeometry(QRect(0, 0, 784, 20));
         TelaPrincipal->setMenuBar(menubar);
         statusbar = new QStatusBar(TelaPrincipal);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -272,7 +301,20 @@ public:
         pushButtonIntersecao->setText(QCoreApplication::translate("TelaPrincipal", " A INTERSE\303\207\303\203O B", nullptr));
         pushButtonCADiferencaCB->setText(QCoreApplication::translate("TelaPrincipal", "A - B", nullptr));
         pushButtonCBDiferencaCA->setText(QCoreApplication::translate("TelaPrincipal", "B - A", nullptr));
-        label_7->setText(QCoreApplication::translate("TelaPrincipal", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">RESULTADO</span></p></body></html>", nullptr));
+        label_7->setText(QCoreApplication::translate("TelaPrincipal", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:700;\">RESULTADO:</span></p></body></html>", nullptr));
+        pushButton->setText(QCoreApplication::translate("TelaPrincipal", "Executar", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidgetSaida->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QCoreApplication::translate("TelaPrincipal", "CONJUNTO A", nullptr));
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidgetSaida->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("TelaPrincipal", "CONJUNTO B", nullptr));
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidgetSaida->verticalHeaderItem(0);
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("TelaPrincipal", "VAZIO", nullptr));
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidgetSaida->verticalHeaderItem(1);
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("TelaPrincipal", "SUBCONJUNTO", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidgetSaida->verticalHeaderItem(2);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("TelaPrincipal", "DISJUNTO", nullptr));
+        QTableWidgetItem *___qtablewidgetitem5 = tableWidgetSaida->verticalHeaderItem(3);
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("TelaPrincipal", "MEDIA", nullptr));
     } // retranslateUi
 
 };

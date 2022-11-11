@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButtonIncluirCB_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::TelaPrincipal *ui;
     ejm::Conjunto *CA;

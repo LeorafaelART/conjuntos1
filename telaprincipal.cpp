@@ -1,5 +1,6 @@
 #include "telaprincipal.h"
 #include "ui_telaprincipal.h"
+#include <QTabWidget>
 
 //boolenao para verificar quando os 2 conjuntos forem criados
 //fazendo com que os botoes com os metodos unicao etc sejam ativos
@@ -90,10 +91,10 @@ void TelaPrincipal::on_pushButtonIntersecao_clicked()
 void TelaPrincipal::on_pushButtonCADiferencaCB_clicked()
 {
     try {
-        ejm::Conjunto *diff=CB->diff(CA);
-        ui->lineEditResultado->setText(diff->getConjunto());
+        ejm::Conjunto *diferenca=CB->diferenca(CA);
+        ui->lineEditResultado->setText(diferenca->getConjunto());
         ui->lineEditResultado->setEnabled(true);
-        delete diff;
+        delete diferenca;
     } catch (QString &erro) {
 
         ui->lineEditResultado->setText(erro);
@@ -104,10 +105,10 @@ void TelaPrincipal::on_pushButtonCADiferencaCB_clicked()
 void TelaPrincipal::on_pushButtonCBDiferencaCA_clicked()
 {
     try {
-        ejm::Conjunto *diff=CA->diff(CB);
-        ui->lineEditResultado->setText(diff->getConjunto());
+        ejm::Conjunto *diferenca=CA->diferenca(CB);
+        ui->lineEditResultado->setText(diferenca->getConjunto());
         ui->lineEditResultado->setEnabled(true);
-        delete diff;
+        delete diferenca;
     } catch (QString &erro) {
 
         ui->lineEditResultado->setText(erro);
@@ -159,4 +160,25 @@ void TelaPrincipal::on_pushButtonIncluirCB_clicked()
     }
 }
 
+
+
+void TelaPrincipal::on_pushButton_clicked()
+{
+    QString str1 ="SIM";
+    QString str2 ="NAO";
+    QTableWidgetItem *item1 =new QTableWidgetItem(str1);
+    QTableWidgetItem *item2 =new QTableWidgetItem(str2);
+
+    ui->tableWidgetSaida->setItem(0,0,item1);
+    ui->tableWidgetSaida->setItem(0,1,item2);
+
+    QString str3= "SIM";
+    QString str4= "NAO";
+    QTableWidgetItem *item3 = new QTableWidgetItem(str3);
+    QTableWidgetItem *item4 = new QTableWidgetItem(str4);
+
+    ui->tableWidgetSaida->setItem(1,0,item3);
+    ui->tableWidgetSaida->setItem(1,1,item4);
+
+}
 

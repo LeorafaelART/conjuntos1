@@ -117,10 +117,10 @@ Conjunto *Conjunto::inter(Conjunto const *const P)
     }
     return inter;
 }
-Conjunto *Conjunto::diff(Conjunto const *const P)
+Conjunto *Conjunto::diferenca(Conjunto const *const P)
 {
     int tamanho=this->indiceOcupacao + P->indiceOcupacao, i, j;
-    Conjunto *diff = new Conjunto(tamanho);
+    Conjunto *diferenca = new Conjunto(tamanho);
 
     //ver: verifica se o conjunto nao vai ficar vazio
     bool ver=false;
@@ -134,11 +134,20 @@ Conjunto *Conjunto::diff(Conjunto const *const P)
         if(j==this->indiceOcupacao)
         {
             ver = true;
-            diff->incluirElemento(*(P->array+i));
+            diferenca->incluirElemento(*(P->array+i));
         }
     }
     //se chegou nessa condicao ele retorna um conjunto vazio pois nao possui diferenca
     if(ver==false) throw QString("{ }");
-    return diff;
+    return diferenca;
 }
+
+bool Conjunto::eVazio()const{
+    if(this->indiceOcupacao == 0) return true;
+}
+
+bool Conjunto::eIndentico()const{
+
+}
+
 }
