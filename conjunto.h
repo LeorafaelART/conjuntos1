@@ -14,13 +14,18 @@ public:
     ~Conjunto();
     int getTamanho() const;
     QString getConjunto() const;
+
+    //para verificar e incluir elemntos do conjunto
     bool buscar(int elemento) const;
     void incluirElemento(int elemento);
 
-
+    //metodos para os conjuntos
     Conjunto *uniao(Conjunto const *const P);
     Conjunto *inter(Conjunto const *const P);
     Conjunto *diff(Conjunto const *const P);
+    Conjunto *subconjunto(Conjunto const *const P);
+    Conjunto *identico (Conjunto const *const P);
+    Conjunto *disjunto (Conjunto const *const P);
 };
 
 }

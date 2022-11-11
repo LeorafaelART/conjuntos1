@@ -5,6 +5,7 @@
 #include<conjunto.h>
 #include<QString>
 #include<QMessageBox>
+#include <QTableWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class TelaPrincipal; }
