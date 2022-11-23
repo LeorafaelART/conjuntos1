@@ -141,13 +141,59 @@ Conjunto *Conjunto::diferenca(Conjunto const *const P)
     if(ver==false) throw QString("{ }");
     return diferenca;
 }
-
 bool Conjunto::eVazio()const{
     if(this->indiceOcupacao == 0) return true;
+    return false;
 }
 
-bool Conjunto::eIndentico()const{
+bool Conjunto::eIndentico(const Conjunto * const P){
 
+       int j;
+       if(eVazio()) throw ("Conjunto vazio");
+       for(int i=0;i<this->indiceOcupacao;i++)
+       {
+           for(j = 0; j < P->indiceOcupacao and *(this->array + i) != *(P->array + j); j++);
+           if(j < P->indiceOcupacao) return false;
+       }
+       return true;
+}
+float Conjunto::media()const{
+    int aux=0;
+    if(eVazio()) throw ("Conjunto vazio");
+    for(int i=0;i<this->indiceOcupacao;i++)
+    {
+        aux=aux+*(this->array+i);
+    }
+    return aux/this->indiceOcupacao;
+}
+
+bool Conjunto::disjunto(Conjunto const *const P){
+    if(eVazio()) throw ("Conjunto vazio");
+    for(int i=0; i<this->indiceOcupacao; i++)
+    {
+        for(int j=0; j<P->indiceOcupacao; j++)
+        {
+            if(*(this->array + i)==*(P->array+j)) return false;
+        }
+    }
+    return true;
+}
+
+bool Conjunto::subconjunto(Conjunto const *const P){
+    if((this->indiceOcupacao) > (P->indiceOcupacao)) return false;
+    int contador=0;
+    for(int i=0;this->indiceOcupacao;i++)
+    {
+        for(int j=0;i<P->indiceOcupacao;j++)
+        {
+            if(*(this->array + i)==*(P->array+j))
+            {
+                contador++;
+            }
+        }
+    }
+    if(contador!=this->indiceOcupacao)return false;
+    return true;
 }
 
 }

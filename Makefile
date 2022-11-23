@@ -1138,52 +1138,6 @@ telaprincipal.o: telaprincipal.cpp telaprincipal.h \
 		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qtabbar.h \
 		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qrubberband.h \
 		ui_telaprincipal.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/QVariant \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QApplication \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qapplication.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qcoreapplication.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qeventloop.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qcoreapplication_platform.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qfuture.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qfutureinterface.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qmutex.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qresultstore.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qfuture_impl.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qthreadpool.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qthread.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qdeadlinetimer.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qelapsedtimer.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qrunnable.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qexception.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtCore/qpromise.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qguiapplication.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qinputmethod.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qguiapplication_platform.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QHBoxLayout \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qboxlayout.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qlayout.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qgridlayout.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QLabel \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qlabel.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qpicture.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qtextdocument.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QLineEdit \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qlineedit.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qtextcursor.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qtextformat.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qpen.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtGui/qtextoption.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QMenuBar \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qmenubar.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qmenu.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QPushButton \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qpushbutton.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QStatusBar \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/qstatusbar.h \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QVBoxLayout \
-		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QWidget \
 		/opt/Qt/6.3.1/gcc_64/include/QtWidgets/QTabWidget
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o telaprincipal.o telaprincipal.cpp
 

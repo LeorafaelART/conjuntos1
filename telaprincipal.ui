@@ -361,12 +361,17 @@
       <x>170</x>
       <y>410</y>
       <width>301</width>
-      <height>161</height>
+      <height>211</height>
      </rect>
     </property>
     <row>
      <property name="text">
       <string>VAZIO</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>IDENTICO</string>
      </property>
     </row>
     <row>
@@ -382,6 +387,11 @@
     <row>
      <property name="text">
       <string>MEDIA</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>AMPLITUDE</string>
      </property>
     </row>
     <column>

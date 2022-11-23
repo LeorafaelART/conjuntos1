@@ -244,8 +244,8 @@ public:
         tableWidgetSaida->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         tableWidgetSaida->setHorizontalHeaderItem(1, __qtablewidgetitem1);
-        if (tableWidgetSaida->rowCount() < 4)
-            tableWidgetSaida->setRowCount(4);
+        if (tableWidgetSaida->rowCount() < 6)
+            tableWidgetSaida->setRowCount(6);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         tableWidgetSaida->setVerticalHeaderItem(0, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
@@ -254,8 +254,12 @@ public:
         tableWidgetSaida->setVerticalHeaderItem(2, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tableWidgetSaida->setVerticalHeaderItem(3, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(4, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        tableWidgetSaida->setVerticalHeaderItem(5, __qtablewidgetitem7);
         tableWidgetSaida->setObjectName(QString::fromUtf8("tableWidgetSaida"));
-        tableWidgetSaida->setGeometry(QRect(170, 410, 301, 161));
+        tableWidgetSaida->setGeometry(QRect(170, 410, 301, 211));
         TelaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -310,11 +314,15 @@ public:
         QTableWidgetItem *___qtablewidgetitem2 = tableWidgetSaida->verticalHeaderItem(0);
         ___qtablewidgetitem2->setText(QCoreApplication::translate("TelaPrincipal", "VAZIO", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tableWidgetSaida->verticalHeaderItem(1);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("TelaPrincipal", "SUBCONJUNTO", nullptr));
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("TelaPrincipal", "IDENTICO", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tableWidgetSaida->verticalHeaderItem(2);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("TelaPrincipal", "DISJUNTO", nullptr));
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("TelaPrincipal", "SUBCONJUNTO", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidgetSaida->verticalHeaderItem(3);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("TelaPrincipal", "MEDIA", nullptr));
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("TelaPrincipal", "DISJUNTO", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tableWidgetSaida->verticalHeaderItem(4);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("TelaPrincipal", "MEDIA", nullptr));
+        QTableWidgetItem *___qtablewidgetitem7 = tableWidgetSaida->verticalHeaderItem(5);
+        ___qtablewidgetitem7->setText(QCoreApplication::translate("TelaPrincipal", "AMPLITUDE", nullptr));
     } // retranslateUi
 
 };

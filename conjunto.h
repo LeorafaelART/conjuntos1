@@ -23,12 +23,12 @@ public:
     Conjunto *uniao(Conjunto const *const P);
     Conjunto *inter(Conjunto const *const P);
     Conjunto *diferenca(Conjunto const *const P);
-    Conjunto disjunto(Conjunto const *const P);
-    Conjunto subconjunto (Conjunto const * const P);
 
+    bool subconjunto (Conjunto const * const P);
+    bool disjunto(Conjunto const *const P);
     bool eVazio()const;
     float media()const;
-    bool eIndentico()const;
+    bool eIndentico(const Conjunto * const P);
 
    ;
 

@@ -166,19 +166,25 @@ void TelaPrincipal::on_pushButton_clicked()
 {
     QString str1 ="SIM";
     QString str2 ="NAO";
-    QTableWidgetItem *item1 =new QTableWidgetItem(str1);
-    QTableWidgetItem *item2 =new QTableWidgetItem(str2);
 
-    ui->tableWidgetSaida->setItem(0,0,item1);
-    ui->tableWidgetSaida->setItem(0,1,item2);
+    if(CA->eVazio()==true){
+     QTableWidgetItem *item1 =new QTableWidgetItem(str1);
+     this->ui->tableWidgetSaida->setItem(0,0,item1);
+   }
+    else{
+        QTableWidgetItem *item2 =new QTableWidgetItem(str2);
+        this->ui->tableWidgetSaida->setItem(0,0,item2);
+    }
+    if(CB->eVazio()==true){
+     QTableWidgetItem *item3 =new QTableWidgetItem(str1);
+     this->ui->tableWidgetSaida->setItem(0,1,item3);
+   }
+    else{
+        QTableWidgetItem *item4 =new QTableWidgetItem(str2);
+        this->ui->tableWidgetSaida->setItem(0,1,item4);
+    }
 
-    QString str3= "SIM";
-    QString str4= "NAO";
-    QTableWidgetItem *item3 = new QTableWidgetItem(str3);
-    QTableWidgetItem *item4 = new QTableWidgetItem(str4);
 
-    ui->tableWidgetSaida->setItem(1,0,item3);
-    ui->tableWidgetSaida->setItem(1,1,item4);
 
 }
 
