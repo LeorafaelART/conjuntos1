@@ -157,6 +157,7 @@ bool Conjunto::eIndentico(const Conjunto * const P){
        }
        return true;
 }
+
 float Conjunto::media()const{
     int aux=0;
     if(eVazio()) throw ("Conjunto vazio");
@@ -182,9 +183,9 @@ bool Conjunto::disjunto(Conjunto const *const P){
 bool Conjunto::subconjunto(Conjunto const *const P){
     if((this->indiceOcupacao) > (P->indiceOcupacao)) return false;
     int contador=0;
-    for(int i=0;this->indiceOcupacao;i++)
+    for(int i=0;i<this->indiceOcupacao;i++)
     {
-        for(int j=0;i<P->indiceOcupacao;j++)
+        for(int j=0;j<P->indiceOcupacao;j++)
         {
             if(*(this->array + i)==*(P->array+j))
             {
@@ -196,4 +197,21 @@ bool Conjunto::subconjunto(Conjunto const *const P){
     return true;
 }
 
+int Conjunto::amplitude()const{
+    int menor=9999999;
+    int maior=0;
+    if(eVazio()) throw ("Conjunto vazio");
+    for(int i=0;i<this->indiceOcupacao;i++)
+    {
+        if(*(this->array+i)< menor)
+        {
+            menor=*(this->array+i);
+        }
+        if(*(this->array+i)> maior)
+        {
+            maior=*(this->array+i);
+        }
+    }
+    return maior-menor;
+}
 }

@@ -29,7 +29,7 @@ public:
     bool eVazio()const;
     float media()const;
     bool eIndentico(const Conjunto * const P);
-
+    int amplitude()const;
    ;
 
 
