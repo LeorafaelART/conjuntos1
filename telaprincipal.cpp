@@ -183,6 +183,7 @@ void TelaPrincipal::on_pushButton_clicked()
         QTableWidgetItem *item4 =new QTableWidgetItem(str2);
         this->ui->tableWidgetSaida->setItem(0,1,item4);
     }
+
     //IDENDITCO REVER TA DANDO MERDA------------------------//
     if(CA->eIndentico(CB)==true){
         QTableWidgetItem *item5 =new QTableWidgetItem(str1);
@@ -259,5 +260,16 @@ void TelaPrincipal::on_pushButton_clicked()
     QTableWidgetItem *item20 =new QTableWidgetItem(ampliB);
     this->ui->tableWidgetSaida->setItem(5,1,item20);
 
+}
+
+
+void TelaPrincipal::on_pushButtonOrdenar_clicked()
+{
+    try {
+
+    }
+    catch (QString &erro) {
+        ui->lineEditResultado->setText(erro);
+    }
 }
 

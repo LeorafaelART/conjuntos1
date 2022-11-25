@@ -38,6 +38,8 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButtonOrdenar_clicked();
+
 private:
     Ui::TelaPrincipal *ui;
     ejm::Conjunto *CA;

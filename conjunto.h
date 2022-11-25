@@ -23,13 +23,13 @@ public:
     Conjunto *uniao(Conjunto const *const P);
     Conjunto *inter(Conjunto const *const P);
     Conjunto *diferenca(Conjunto const *const P);
-
     bool subconjunto (Conjunto const * const P);
     bool disjunto(Conjunto const *const P);
     bool eVazio()const;
     float media()const;
     bool eIndentico(const Conjunto * const P);
     int amplitude()const;
+    Conjunto *ordenar(Conjunto const *const P);
    ;
 
 

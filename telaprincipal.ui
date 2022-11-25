@@ -411,10 +411,10 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonCADiferencaCB_2">
+   <widget class="QPushButton" name="pushButtonOrdenar">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>300</x>
       <y>270</y>
       <width>182</width>
       <height>36</height>

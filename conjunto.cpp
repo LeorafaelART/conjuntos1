@@ -214,4 +214,23 @@ int Conjunto::amplitude()const{
     }
     return maior-menor;
 }
+
+Conjunto *Conjunto::ordenar(Conjunto const *const P){
+    //auxiliar recebendo o conjunto ja unido pela funcao de uniao
+    Conjunto *conjuntoOrdenado= this->uniao(P);
+    int troca;
+    //aux 2 pra ajudar na troca
+    for(int i=0;i< conjuntoOrdenado->indiceOcupacao;i++){
+        for(int j= i+1;j<conjuntoOrdenado->indiceOcupacao;j++){
+            if(*(conjuntoOrdenado->array+i)>*(conjuntoOrdenado->array+j)){
+                troca= *(conjuntoOrdenado->array+i);
+                *(conjuntoOrdenado->array+i)=*(conjuntoOrdenado->array+j);
+                *(conjuntoOrdenado->array+j)=troca;
+            }
+
+        }
+    }
+    return conjuntoOrdenado;
+}
+
 }
