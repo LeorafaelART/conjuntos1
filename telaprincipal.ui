@@ -414,7 +414,7 @@
    <widget class="QPushButton" name="pushButtonOrdenar">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>110</x>
       <y>270</y>
       <width>182</width>
       <height>36</height>
@@ -430,6 +430,44 @@
      <string>ORDENAR</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButtonSubcadeia_A">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>270</y>
+      <width>182</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>SUBCADEIA - A</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonSubcadeia_B">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>270</y>
+      <width>182</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>SUBCADEIA - B</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -437,7 +475,7 @@
      <x>0</x>
      <y>0</y>
      <width>784</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

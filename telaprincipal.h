@@ -40,6 +40,10 @@ private slots:
 
     void on_pushButtonOrdenar_clicked();
 
+    void on_pushButtonSubcadeia_A_clicked();
+
+    void on_pushButtonSubcadeia_B_clicked();
+
 private:
     Ui::TelaPrincipal *ui;
     ejm::Conjunto *CA;

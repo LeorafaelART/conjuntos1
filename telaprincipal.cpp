@@ -22,6 +22,7 @@ TelaPrincipal::TelaPrincipal(QWidget *parent)
     ui->pushButtonIntersecao->setEnabled(false);
     ui->pushButtonCADiferencaCB->setEnabled(false);
     ui->pushButtonCBDiferencaCA->setEnabled(false);
+    ui->pushButtonOrdenar->setEnabled(false);
 
 }
 
@@ -130,6 +131,7 @@ void TelaPrincipal::on_pushButtonIncluirCA_clicked()
             ui->pushButtonIntersecao->setEnabled(true);
             ui->pushButtonCADiferencaCB->setEnabled(true);
             ui->pushButtonCBDiferencaCA->setEnabled(true);
+            ui->pushButtonOrdenar->setEnabled(true);
         }
     } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
@@ -152,6 +154,8 @@ void TelaPrincipal::on_pushButtonIncluirCB_clicked()
             ui->pushButtonIntersecao->setEnabled(true);
             ui->pushButtonCADiferencaCB->setEnabled(true);
             ui->pushButtonCBDiferencaCA->setEnabled(true);
+            ui->pushButtonOrdenar->setEnabled(true);
+
         }
     } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
@@ -164,112 +168,130 @@ void TelaPrincipal::on_pushButtonIncluirCB_clicked()
 
 void TelaPrincipal::on_pushButton_clicked()
 {
-    QString str1 ="SIM";
-    QString str2 ="NAO";
+    try {
+        QString str1 ="SIM";
+        QString str2 ="NAO";
 
-    if(CA->eVazio()==true){
-     QTableWidgetItem *item1 =new QTableWidgetItem(str1);
-     this->ui->tableWidgetSaida->setItem(0,0,item1);
-   }
-    else{
-        QTableWidgetItem *item2 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(0,0,item2);
+        if(CA->eVazio()==true){
+         QTableWidgetItem *item1 =new QTableWidgetItem(str1);
+         this->ui->tableWidgetSaida->setItem(0,0,item1);
+       }
+        else{
+            QTableWidgetItem *item2 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(0,0,item2);
+        }
+        if(CB->eVazio()==true){
+         QTableWidgetItem *item3 =new QTableWidgetItem(str1);
+         this->ui->tableWidgetSaida->setItem(0,1,item3);
+       }
+        else{
+            QTableWidgetItem *item4 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(0,1,item4);
+        }
+
+        //IDENDITCO REVER TA DANDO MERDA------------------------//
+        if(CA->eIndentico(CB)==true){
+            QTableWidgetItem *item5 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(1,0,item5);
+        }
+        else{
+            QTableWidgetItem *item6 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(1,0,item6);
+        }
+        if(CB->eIndentico(CA)==true){
+            QTableWidgetItem *item7 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(1,1,item7);
+        }
+        else{
+            QTableWidgetItem *item8 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(1,1,item8);
+        }
+        //------------------------------------------------------//
+
+        if(CA->subconjunto(CB)==true){
+            QTableWidgetItem *item11 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(2,0,item11);
+
+        }
+        else{
+            QTableWidgetItem *item12 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(2,0,item12);
+        }
+
+        if(CB->subconjunto(CA)==true){
+            QTableWidgetItem *item13 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(2,1,item13);
+
+        }
+        else{
+            QTableWidgetItem *item14 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(2,1,item14);
+        }
+
+
+        if(CA->disjunto(CB)==true){
+            QTableWidgetItem *item15 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(3,0,item15);
+        }
+        else{
+            QTableWidgetItem *item16 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(3,0,item16);
+        }
+
+        if(CB->disjunto(CA)==true){
+            QTableWidgetItem *item17 =new QTableWidgetItem(str1);
+            this->ui->tableWidgetSaida->setItem(3,1,item17);
+        }
+        else{
+            QTableWidgetItem *item18 =new QTableWidgetItem(str2);
+            this->ui->tableWidgetSaida->setItem(3,1,item18);
+        }
+
+
+        QString mediaA= QString::number(CA->media());
+        QString mediaB= QString::number(CB->media());
+
+        QTableWidgetItem *item9 =new QTableWidgetItem(mediaA);
+        this->ui->tableWidgetSaida->setItem(4,0,item9);
+        QTableWidgetItem *item10 =new QTableWidgetItem(mediaB);
+        this->ui->tableWidgetSaida->setItem(4,1,item10);
+
+
+        QString ampliA= QString::number(CA->amplitude());
+        QString ampliB= QString::number(CB->amplitude());
+
+        QTableWidgetItem *item19 =new QTableWidgetItem(ampliA);
+        this->ui->tableWidgetSaida->setItem(5,0,item19);
+        QTableWidgetItem *item20 =new QTableWidgetItem(ampliB);
+        this->ui->tableWidgetSaida->setItem(5,1,item20);
+
+    } catch (...) {
     }
-    if(CB->eVazio()==true){
-     QTableWidgetItem *item3 =new QTableWidgetItem(str1);
-     this->ui->tableWidgetSaida->setItem(0,1,item3);
-   }
-    else{
-        QTableWidgetItem *item4 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(0,1,item4);
-    }
-
-    //IDENDITCO REVER TA DANDO MERDA------------------------//
-    if(CA->eIndentico(CB)==true){
-        QTableWidgetItem *item5 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(1,0,item5);
-    }
-    else{
-        QTableWidgetItem *item6 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(1,0,item6);
-    }
-    if(CB->eIndentico(CA)==true){
-        QTableWidgetItem *item7 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(1,1,item7);
-    }
-    else{
-        QTableWidgetItem *item8 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(1,1,item8);
-    }
-    //------------------------------------------------------//
-
-    if(CA->subconjunto(CB)==true){
-        QTableWidgetItem *item11 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(2,0,item11);
-
-    }
-    else{
-        QTableWidgetItem *item12 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(2,0,item12);
-    }
-
-    if(CB->subconjunto(CA)==true){
-        QTableWidgetItem *item13 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(2,1,item13);
-
-    }
-    else{
-        QTableWidgetItem *item14 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(2,1,item14);
-    }
-
-
-    if(CA->disjunto(CB)==true){
-        QTableWidgetItem *item15 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(3,0,item15);
-    }
-    else{
-        QTableWidgetItem *item16 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(3,0,item16);
-    }
-
-    if(CB->disjunto(CA)==true){
-        QTableWidgetItem *item17 =new QTableWidgetItem(str1);
-        this->ui->tableWidgetSaida->setItem(3,1,item17);
-    }
-    else{
-        QTableWidgetItem *item18 =new QTableWidgetItem(str2);
-        this->ui->tableWidgetSaida->setItem(3,1,item18);
-    }
-
-
-    QString mediaA= QString::number(CA->media());
-    QString mediaB= QString::number(CB->media());
-
-    QTableWidgetItem *item9 =new QTableWidgetItem(mediaA);
-    this->ui->tableWidgetSaida->setItem(4,0,item9);
-    QTableWidgetItem *item10 =new QTableWidgetItem(mediaB);
-    this->ui->tableWidgetSaida->setItem(4,1,item10);
-
-
-    QString ampliA= QString::number(CA->amplitude());
-    QString ampliB= QString::number(CB->amplitude());
-
-    QTableWidgetItem *item19 =new QTableWidgetItem(ampliA);
-    this->ui->tableWidgetSaida->setItem(5,0,item19);
-    QTableWidgetItem *item20 =new QTableWidgetItem(ampliB);
-    this->ui->tableWidgetSaida->setItem(5,1,item20);
-
 }
 
 
 void TelaPrincipal::on_pushButtonOrdenar_clicked()
 {
     try {
+        ejm::Conjunto *ordenar=CA->ordenar(CB);
+        ui->lineEditResultado->setText(ordenar->getConjunto());
+        ui->lineEditResultado->setEnabled(true);
+        delete ordenar;
 
     }
     catch (QString &erro) {
-        ui->lineEditResultado->setText(erro);
-    }
+        QMessageBox::information(this,"ERRO", erro);    }
+}
+
+
+void TelaPrincipal::on_pushButtonSubcadeia_A_clicked()
+{
+
+}
+
+
+void TelaPrincipal::on_pushButtonSubcadeia_B_clicked()
+{
+
 }
 

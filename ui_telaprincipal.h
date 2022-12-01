@@ -62,9 +62,12 @@ public:
     QWidget *layoutWidget4;
     QVBoxLayout *verticalLayout;
     QLabel *label_7;
-    QLineEdit *lineEditResultado;
     QPushButton *pushButton;
     QTableWidget *tableWidgetSaida;
+    QLineEdit *lineEditResultado;
+    QPushButton *pushButtonOrdenar;
+    QPushButton *pushButtonSubcadeia_A;
+    QPushButton *pushButtonSubcadeia_B;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -218,7 +221,7 @@ public:
 
         layoutWidget4 = new QWidget(centralwidget);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 290, 751, 76));
+        layoutWidget4->setGeometry(QRect(20, 310, 751, 76));
         verticalLayout = new QVBoxLayout(layoutWidget4);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -227,16 +230,9 @@ public:
 
         verticalLayout->addWidget(label_7);
 
-        lineEditResultado = new QLineEdit(layoutWidget4);
-        lineEditResultado->setObjectName(QString::fromUtf8("lineEditResultado"));
-        lineEditResultado->setFont(font);
-        lineEditResultado->setReadOnly(true);
-
-        verticalLayout->addWidget(lineEditResultado);
-
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(300, 380, 80, 23));
+        pushButton->setGeometry(QRect(370, 420, 80, 23));
         tableWidgetSaida = new QTableWidget(centralwidget);
         if (tableWidgetSaida->columnCount() < 2)
             tableWidgetSaida->setColumnCount(2);
@@ -259,7 +255,24 @@ public:
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
         tableWidgetSaida->setVerticalHeaderItem(5, __qtablewidgetitem7);
         tableWidgetSaida->setObjectName(QString::fromUtf8("tableWidgetSaida"));
-        tableWidgetSaida->setGeometry(QRect(170, 410, 301, 211));
+        tableWidgetSaida->setGeometry(QRect(250, 450, 301, 211));
+        lineEditResultado = new QLineEdit(centralwidget);
+        lineEditResultado->setObjectName(QString::fromUtf8("lineEditResultado"));
+        lineEditResultado->setGeometry(QRect(20, 380, 749, 36));
+        lineEditResultado->setFont(font);
+        lineEditResultado->setReadOnly(true);
+        pushButtonOrdenar = new QPushButton(centralwidget);
+        pushButtonOrdenar->setObjectName(QString::fromUtf8("pushButtonOrdenar"));
+        pushButtonOrdenar->setGeometry(QRect(110, 270, 182, 36));
+        pushButtonOrdenar->setFont(font);
+        pushButtonSubcadeia_A = new QPushButton(centralwidget);
+        pushButtonSubcadeia_A->setObjectName(QString::fromUtf8("pushButtonSubcadeia_A"));
+        pushButtonSubcadeia_A->setGeometry(QRect(300, 270, 182, 36));
+        pushButtonSubcadeia_A->setFont(font);
+        pushButtonSubcadeia_B = new QPushButton(centralwidget);
+        pushButtonSubcadeia_B->setObjectName(QString::fromUtf8("pushButtonSubcadeia_B"));
+        pushButtonSubcadeia_B->setGeometry(QRect(490, 270, 182, 36));
+        pushButtonSubcadeia_B->setFont(font);
         TelaPrincipal->setCentralWidget(centralwidget);
         menubar = new QMenuBar(TelaPrincipal);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -280,8 +293,7 @@ public:
         QWidget::setTabOrder(pushButtonIntersecao, pushButtonCADiferencaCB);
         QWidget::setTabOrder(pushButtonCADiferencaCB, pushButtonCBDiferencaCA);
         QWidget::setTabOrder(pushButtonCBDiferencaCA, lineEditSaidaCA);
-        QWidget::setTabOrder(lineEditSaidaCA, lineEditResultado);
-        QWidget::setTabOrder(lineEditResultado, lineEditSaidaCB);
+        QWidget::setTabOrder(lineEditSaidaCA, lineEditSaidaCB);
 
         retranslateUi(TelaPrincipal);
 
@@ -323,6 +335,9 @@ public:
         ___qtablewidgetitem6->setText(QCoreApplication::translate("TelaPrincipal", "MEDIA", nullptr));
         QTableWidgetItem *___qtablewidgetitem7 = tableWidgetSaida->verticalHeaderItem(5);
         ___qtablewidgetitem7->setText(QCoreApplication::translate("TelaPrincipal", "AMPLITUDE", nullptr));
+        pushButtonOrdenar->setText(QCoreApplication::translate("TelaPrincipal", "ORDENAR", nullptr));
+        pushButtonSubcadeia_A->setText(QCoreApplication::translate("TelaPrincipal", "SUBCADEIA - A", nullptr));
+        pushButtonSubcadeia_B->setText(QCoreApplication::translate("TelaPrincipal", "SUBCADEIA - B", nullptr));
     } // retranslateUi
 
 };

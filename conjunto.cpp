@@ -233,4 +233,24 @@ Conjunto *Conjunto::ordenar(Conjunto const *const P){
     return conjuntoOrdenado;
 }
 
+Conjunto * Conjunto::subcadeiaA()const{
+    if(eVazio()) throw ("Conjunto vazio");
+    int inicio = 0, inicioFinal=0 ,final=0,anterior=*(array);
+    Conjunto * resposta = new Conjunto(indiceOcupacao);
+    for(int i = 0; i<indiceOcupacao; i++)
+    {
+        if(*(array+i)< anterior)
+        {
+            inicioFinal = inicio;
+            final = i;
+            inicio=i;
+        }
+        anterior = *(array + i);
+    }
+    for(int i = inicioFinal; i<final; i++)
+    {
+        resposta->incluirElemento(*(array + i));
+    }
+    return resposta;
+}
 }

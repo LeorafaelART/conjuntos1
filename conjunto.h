@@ -30,6 +30,8 @@ public:
     bool eIndentico(const Conjunto * const P);
     int amplitude()const;
     Conjunto *ordenar(Conjunto const *const P);
+    Conjunto * subcadeiaA()const;
+    Conjunto * subcadeiaB()const;
    ;
 
 
