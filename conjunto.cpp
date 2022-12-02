@@ -235,18 +235,74 @@ Conjunto *Conjunto::ordenar(Conjunto const *const P){
 
 Conjunto * Conjunto::subcadeiaA()const{
     if(eVazio()) throw ("Conjunto vazio");
-    int inicio = 0, inicioFinal=0 ,final=0,anterior=*(array);
+    int inicio = 0, inicioFinal=0 ,final=0,anterior=*(array), i, contA = 0, contB = 0;
     Conjunto * resposta = new Conjunto(indiceOcupacao);
-    for(int i = 0; i<indiceOcupacao; i++)
+    for(i = 0; i<indiceOcupacao; i++)
     {
+        contA++;
         if(*(array+i)< anterior)
         {
-            inicioFinal = inicio;
-            final = i;
-            inicio=i;
+            if(contA > contB){
+                inicioFinal = inicio;
+                final = i;
+                inicio=i;
+                contB = contA;
+
+            }
+            contA = 1;
         }
         anterior = *(array + i);
     }
+    if(*(array+i)< anterior)
+    {
+        if(contA > contB){
+            inicioFinal = inicio;
+            final = i;
+            inicio=i;
+            contB = contA;
+
+        }
+        contA = 1;
+    }
+    for(int i = inicioFinal; i<final; i++)
+    {
+        resposta->incluirElemento(*(array + i));
+    }
+    return resposta;
+}
+Conjunto * Conjunto::subcadeiaB()const{
+    if(eVazio()) throw ("Conjunto vazio");
+    int inicio = 0, inicioFinal=0 ,final=0,anterior=*(array), i, contA= 0, contB= 0;
+    Conjunto * resposta = new Conjunto(indiceOcupacao);
+    for(i = 0; i<indiceOcupacao; i++)
+    {
+        contA++;
+        if(*(array+i)> anterior)
+        {
+            if(contA > contB){
+                inicioFinal = inicio;
+                final = i;
+                inicio=i;
+                contB = contA;
+
+            }
+            contA = 1;
+        }
+        anterior = *(array + i);
+    }
+    if(*(array+i)> anterior)
+    {
+        if(contA > contB){
+            inicioFinal = inicio;
+            final = i;
+            inicio=i;
+            contB = contA;
+
+
+        }
+        contA = 1;
+    }
+    anterior = *(array + i);
     for(int i = inicioFinal; i<final; i++)
     {
         resposta->incluirElemento(*(array + i));

@@ -23,6 +23,8 @@ TelaPrincipal::TelaPrincipal(QWidget *parent)
     ui->pushButtonCADiferencaCB->setEnabled(false);
     ui->pushButtonCBDiferencaCA->setEnabled(false);
     ui->pushButtonOrdenar->setEnabled(false);
+    ui->pushButtonSubcadeia_A->setEnabled(false);
+    ui->pushButtonSubcadeia_B->setEnabled(false);
 
 }
 
@@ -132,6 +134,10 @@ void TelaPrincipal::on_pushButtonIncluirCA_clicked()
             ui->pushButtonCADiferencaCB->setEnabled(true);
             ui->pushButtonCBDiferencaCA->setEnabled(true);
             ui->pushButtonOrdenar->setEnabled(true);
+            ui->pushButtonSubcadeia_A->setEnabled(true);
+            ui->pushButtonSubcadeia_B->setEnabled(true);
+
+
         }
     } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
@@ -155,6 +161,8 @@ void TelaPrincipal::on_pushButtonIncluirCB_clicked()
             ui->pushButtonCADiferencaCB->setEnabled(true);
             ui->pushButtonCBDiferencaCA->setEnabled(true);
             ui->pushButtonOrdenar->setEnabled(true);
+            ui->pushButtonSubcadeia_A->setEnabled(true);
+            ui->pushButtonSubcadeia_B->setEnabled(true);
 
         }
     } catch (QString &erro) {
@@ -280,18 +288,39 @@ void TelaPrincipal::on_pushButtonOrdenar_clicked()
 
     }
     catch (QString &erro) {
-        QMessageBox::information(this,"ERRO", erro);    }
+        QMessageBox::information(this,"ERRO", erro);
+    }
 }
 
 
 void TelaPrincipal::on_pushButtonSubcadeia_A_clicked()
 {
+    try {
+        ejm::Conjunto *subA=CA->subcadeiaA();
+        ui->lineEditResultado->setText(subA->getConjunto());
+        ui->lineEditResultado->setEnabled(true);
+        delete subA;
 
+    } catch (QString &erro) {
+        QMessageBox::information(this,"ERRO", erro);
+
+
+    }
 }
 
 
 void TelaPrincipal::on_pushButtonSubcadeia_B_clicked()
 {
+    try {
+        ejm::Conjunto *subB=CB->subcadeiaB();
+        ui->lineEditResultado->setText(subB->getConjunto());
+        ui->lineEditResultado->setEnabled(true);
+        delete subB;
+
+    } catch (QString &erro) {
+        QMessageBox::information(this,"ERRO", erro);
+
+    }
 
 }
 
