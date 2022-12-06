@@ -25,6 +25,7 @@ TelaPrincipal::TelaPrincipal(QWidget *parent)
     ui->pushButtonOrdenar->setEnabled(false);
     ui->pushButtonSubcadeia_A->setEnabled(false);
     ui->pushButtonSubcadeia_B->setEnabled(false);
+    ui->pushButton->setEnabled(false);
 
 }
 
@@ -43,6 +44,7 @@ void TelaPrincipal::on_pushButtonCriarCA_clicked()
         CA = new ejm::Conjunto(tamanho);
         ui->lineEditIncluirCA->setEnabled(true);
         ui->pushButtonIncluirCA->setEnabled(true);
+
         verA=true;
     } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
@@ -57,6 +59,8 @@ void TelaPrincipal::on_pushButtonCriarCB_clicked()
         CB = new ejm::Conjunto(tamanho);
         ui->lineEditIncluirCB->setEnabled(true);
         ui->pushButtonIncluirCB->setEnabled(true);
+        ui->pushButton->setEnabled(true);
+
     } catch (QString &erro) {
         QMessageBox::information(this,"ERRO DO SISTEMA",erro);
     } catch(std::bad_alloc &erro){
@@ -197,7 +201,7 @@ void TelaPrincipal::on_pushButton_clicked()
             this->ui->tableWidgetSaida->setItem(0,1,item4);
         }
 
-        //IDENDITCO REVER TA DANDO MERDA------------------------//
+
         if(CA->eIndentico(CB)==true){
             QTableWidgetItem *item5 =new QTableWidgetItem(str1);
             this->ui->tableWidgetSaida->setItem(1,0,item5);
@@ -214,7 +218,7 @@ void TelaPrincipal::on_pushButton_clicked()
             QTableWidgetItem *item8 =new QTableWidgetItem(str2);
             this->ui->tableWidgetSaida->setItem(1,1,item8);
         }
-        //------------------------------------------------------//
+
 
         if(CA->subconjunto(CB)==true){
             QTableWidgetItem *item11 =new QTableWidgetItem(str1);

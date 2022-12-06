@@ -153,7 +153,7 @@ bool Conjunto::eIndentico(const Conjunto * const P){
        for(int i=0;i<this->indiceOcupacao;i++)
        {
            for(j = 0; j < P->indiceOcupacao and *(this->array + i) != *(P->array + j); j++);
-           if(j < P->indiceOcupacao) return false;
+           if(j == P->indiceOcupacao) return false;
        }
        return true;
 }
